@@ -2,7 +2,8 @@
 import { useState } from "react";
 
 function Skills() {
-  const [activeTab, setActiveTab] = useState("frontend");
+  type SkillTab = "frontend" | "backend" | "tools";
+  const [activeTab, setActiveTab] = useState<SkillTab>("frontend");
 
   const skillsData = {
     frontend: {
