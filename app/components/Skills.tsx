@@ -86,7 +86,7 @@ function Skills() {
 
         {/* Skills Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {Object.keys(skillsData).map((tab) => (
+          {(Object.keys(skillsData) as SkillTab[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
