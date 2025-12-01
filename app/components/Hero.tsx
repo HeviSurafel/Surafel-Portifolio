@@ -3,12 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, easeOut, AnimatePresence } from 'framer-motion';
+import { MessageCircle, Phone } from 'lucide-react';
 
 function Hero() {
   const [isMounted, setIsMounted] = useState(false);
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const heroVariant = {
@@ -45,7 +51,8 @@ function Hero() {
       }
     }
   };
- const fullText = "Welcome to My"; // full text to type
+
+  const fullText = "Welcome to My";
   const [letter, setLetter] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -54,11 +61,37 @@ function Hero() {
       const timeout = setTimeout(() => {
         setLetter((prev) => prev + fullText[index]);
         setIndex(index + 1);
-      }, 150); // typing speed in ms
+      }, 150);
       
       return () => clearTimeout(timeout);
     }
   }, [index, fullText]);
+
+  // WhatsApp number and message
+  const phoneNumber = '+251964945647'; 
+  const defaultMessage = 'Hello! I saw your portfolio and would like to connect with you.';
+
+  // Function to create WhatsApp link
+  const createWhatsAppLink = (message = defaultMessage) => {
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
+
+  // Handle WhatsApp click with different options
+  const handleWhatsAppClick = (option?: string) => {
+    let message = defaultMessage;
+    
+    if (option === 'hire') {
+      message = 'Hello! I am interested in hiring you for a project. Can we discuss further?';
+    } else if (option === 'project') {
+      message = 'Hello! I have a project idea I would like to discuss with you.';
+    } else if (option === 'collaborate') {
+      message = 'Hello! I would like to explore collaboration opportunities with you.';
+    }
+    
+    window.open(createWhatsAppLink(message), '_blank', 'noopener,noreferrer');
+  };
+
   // Prevent hydration mismatch
   if (!isMounted) {
     return (
@@ -89,9 +122,75 @@ function Hero() {
     );
   }
 
-
   return (
     <div className="flex items-center min-h-screen px-4 py-5 transition-colors duration-300 bg-white dark:bg-gray-900 sm:px-6 lg:px-8">
+      {/* Floating WhatsApp Button */}
+      <AnimatePresence>
+        {showWhatsApp && (
+          <motion.div
+            initial={{ scale: 0, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0, opacity: 0, y: 20 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="fixed z-50 flex flex-col items-end gap-3 bottom-6 right-6"
+          >
+            {/* Quick Message Options */}
+            <AnimatePresence>
+              {showWhatsApp && (
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  className="flex flex-col gap-2 mr-2"
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.05, x: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleWhatsAppClick('hire')}
+                    className="px-3 py-2 text-xs font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 whitespace-nowrap"
+                  >
+                    💼 Hire Me
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05, x: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleWhatsAppClick('project')}
+                    className="px-3 py-2 text-xs font-medium text-white bg-purple-600 rounded-lg shadow-lg hover:bg-purple-700 whitespace-nowrap"
+                  >
+                    🚀 Project
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.05, x: -5 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleWhatsAppClick('collaborate')}
+                    className="px-3 py-2 text-xs font-medium text-white bg-green-600 rounded-lg shadow-lg hover:bg-green-700 whitespace-nowrap"
+                  >
+                    🤝 Collaborate
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Main WhatsApp Button */}
+            <motion.a
+              href={createWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 text-white transition-all duration-300 rounded-full shadow-2xl bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 hover:shadow-3xl"
+              aria-label="Chat on WhatsApp"
+              onClick={(e) => {
+                e.preventDefault();
+                handleWhatsAppClick();
+              }}
+            >
+              <Phone className="w-6 h-6" />
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <AnimatePresence mode="wait">
         <motion.div
           variants={containerVariant}
