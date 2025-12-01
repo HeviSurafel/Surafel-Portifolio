@@ -1,7 +1,7 @@
 // app/layout.tsx
-import { ThemeProvider } from './contexts/ThemeContext';
-import ThemeInitializer from './contexts/ThemeInitializer';
-import './globals.css';
+import { ThemeProvider } from "./contexts/ThemeContext";
+import ThemeInitializer from "./contexts/ThemeInitializer";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white dark:bg-gray-900 transition-colors duration-300">
+      <body className="min-h-screen transition-colors duration-300 bg-white dark:bg-gray-900">
         <ThemeProvider>
           <ThemeInitializer />
           {children}

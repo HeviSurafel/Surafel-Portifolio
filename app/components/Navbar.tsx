@@ -9,33 +9,33 @@ function Navbar() {
   const { theme, toggleTheme, mounted } = useTheme();
 
  console.log('mode', theme);
-  // Simplified loading state
-  // if (!mounted) {
-  //   return (
-  //     <nav className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50">
-  //       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  //         <div className="flex justify-between items-center h-16">
-  //           <div className="flex-shrink-0">
-  //             <div className="text-2xl font-bold text-gray-800 dark:text-white">
-  //               Portfolio
-  //             </div>
-  //           </div>
-  //           <div className="w-6 h-6"></div>
-  //         </div>
-  //       </div>
-  //     </nav>
-  //   );
-  // }
+  
+  if (!mounted) {
+    return (
+      <nav className="sticky top-0 z-50 bg-white shadow-lg dark:bg-gray-900">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex-shrink-0">
+              <div className="text-2xl font-bold text-gray-800 dark:text-white">
+                Portfolio
+              </div>
+            </div>
+            <div className="w-6 h-6"></div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="sticky top-0 z-50 transition-colors duration-300 bg-white border-b border-gray-200 shadow-lg dark:bg-gray-900 dark:border-gray-700">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-2xl font-bold text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+              className="text-2xl font-bold text-gray-800 transition-colors duration-300 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
             >
               Surafel Portfolio
             </Link>
@@ -43,13 +43,13 @@ function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="flex items-baseline ml-10 space-x-8">
               {["Home", "About", "Projects", "Skills", "Contact"].map(
                 (item) => (
                   <Link
                     key={item}
                     href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
-                    className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                    className="px-3 py-2 text-sm font-medium text-gray-600 transition-colors duration-300 rounded-md dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                   >
                     {item}
                   </Link>
@@ -59,10 +59,10 @@ function Navbar() {
           </div>
 
           {/* Theme Toggle and CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button
+          <div className="items-center hidden space-x-4 md:flex">
+            {/* <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+              className="p-2 text-gray-600 transition-colors duration-300 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label="Toggle theme"
             >
               {theme === "light" ? (
@@ -80,20 +80,20 @@ function Navbar() {
                   />
                 </svg>
               )}
-            </button>
+            </button> */}
 
             <Link href="https://t.me/+251964945647">
-              <button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-colors duration-300">
+              <button className="px-6 py-2 font-medium text-white transition-colors duration-300 bg-blue-600 rounded-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
                 Hire Me
               </button>
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <button
+          <div className="flex items-center space-x-2 md:hidden">
+            {/* <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+              className="p-2 text-gray-600 transition-colors duration-300 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
               aria-label="Toggle theme"
             >
               {theme === "light" ? (
@@ -109,12 +109,12 @@ function Navbar() {
                   />
                 </svg>
               )}
-            </button>
+            </button> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none transition-colors duration-300"
+              className="text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -128,13 +128,13 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="bg-white border-t border-gray-200 md:hidden dark:bg-gray-900 dark:border-gray-700">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {["Home", "About", "Projects", "Skills", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
+                className="block px-3 py-2 text-base font-medium text-gray-600 transition-colors duration-300 rounded-md dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
@@ -142,7 +142,7 @@ function Navbar() {
             ))}
             <div className="px-3 py-2">
               <Link href="https://t.me/+251964945647">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition-colors duration-300">
+                <button className="w-full px-6 py-2 font-medium text-white transition-colors duration-300 bg-blue-600 rounded-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
                   Hire Me
                 </button>
               </Link>

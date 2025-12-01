@@ -117,7 +117,7 @@ function Contact() {
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/surafel-wondu-829820210/",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -127,7 +127,7 @@ function Contact() {
     },
     {
       name: "Twitter",
-      url: "https://twitter.com",
+      url: "https://x.com/SurafelWond?t=nc5w804hgjB2U36AeskP6Q&s=09",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -137,7 +137,7 @@ function Contact() {
     },
     {
       name: "Instagram",
-      url: "https://instagram.com",
+      url: "https://www.instagram.com/hevi590?igsh=azM0c210aXBlNnZr",
       icon: (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -171,25 +171,25 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 transition-colors duration-300 bg-white dark:bg-gray-900">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+          <h2 className="mb-4 text-4xl font-bold text-gray-800 sm:text-5xl dark:text-white">
             Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300">
             Let's discuss your next project and create something amazing together
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Contact Information */}
           <motion.div
             variants={containerVariants}
@@ -199,10 +199,10 @@ function Contact() {
             className="space-y-8"
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-gray-800 dark:text-white">
                 Let's start a conversation
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="leading-relaxed text-gray-600 dark:text-gray-300">
                 I'm always interested in new opportunities, whether it's a full-time position, 
                 freelance work, or just chatting about technology and design. Feel free to reach 
                 out and I'll get back to you as soon as possible!
@@ -216,11 +216,11 @@ function Contact() {
                   key={index}
                   href={item.link}
                   variants={itemVariants}
-                  className="flex items-center space-x-4 p-4 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg border border-gray-200 dark:border-gray-700"
+                  className="flex items-center p-4 space-x-4 transition-all duration-300 border border-gray-200 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-900/20 group hover:-translate-y-1 hover:shadow-lg dark:border-gray-700"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <div className="flex items-center justify-center w-12 h-12 text-blue-600 transition-colors duration-300 bg-blue-100 dark:bg-blue-900/30 rounded-xl dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white">
                     {item.icon}
                   </div>
                   <div>
@@ -233,7 +233,7 @@ function Contact() {
 
             {/* Social Links */}
             <motion.div variants={itemVariants}>
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Follow Me</h4>
+              <h4 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -258,9 +258,9 @@ function Contact() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700"
+            className="p-8 border border-gray-200 bg-gray-50 dark:bg-gray-800 rounded-2xl dark:border-gray-700"
           >
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Send me a message</h3>
+            <h3 className="mb-6 text-2xl font-bold text-gray-800 dark:text-white">Send me a message</h3>
             
             {/* Status Message */}
             {submitStatus.message && (
@@ -278,9 +278,9 @@ function Contact() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Your Name *
                   </label>
                   <input
@@ -291,12 +291,12 @@ function Contact() {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 text-gray-900 transition-all duration-300 bg-white border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Email Address *
                   </label>
                   <input
@@ -307,13 +307,13 @@ function Contact() {
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 text-gray-900 transition-all duration-300 bg-white border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                   Subject *
                 </label>
                 <input
@@ -324,12 +324,12 @@ function Contact() {
                   onChange={handleChange}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 text-gray-900 transition-all duration-300 bg-white border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Project Inquiry"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                   Message *
                 </label>
                 <textarea
@@ -340,20 +340,20 @@ function Contact() {
                   required
                   disabled={isLoading}
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed resize-none"
+                  className="w-full px-4 py-3 text-gray-900 transition-all duration-300 bg-white border border-gray-300 resize-none dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 dark:bg-gray-700 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>
               <motion.button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden"
+                className="relative w-full py-4 overflow-hidden font-semibold text-white transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed"
                 whileHover={{ scale: isLoading ? 1 : 1.02 }}
                 whileTap={{ scale: isLoading ? 1 : 0.98 }}
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center space-x-2">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-5 h-5 border-2 border-white rounded-full border-t-transparent animate-spin"></div>
                     <span>Sending...</span>
                   </div>
                 ) : (

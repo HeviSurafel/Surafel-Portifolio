@@ -62,27 +62,27 @@ function Hero() {
   // Prevent hydration mismatch
   if (!isMounted) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+      <div className="flex items-center min-h-screen px-4 bg-white dark:bg-gray-900 sm:px-6 lg:px-8">
+        <div className="grid items-center w-full grid-cols-1 gap-8 mx-auto max-w-7xl lg:grid-cols-2 lg:gap-12">
           {/* Loading skeleton */}
-          <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
-            <div className="flex lg:flex-col gap-4 order-2 lg:order-1">
+          <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
+            <div className="flex order-2 gap-4 lg:flex-col lg:order-1">
               {[1, 2, 3, 4].map((item) => (
-                <div key={item} className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse"></div>
+                <div key={item} className="w-12 h-12 bg-gray-200 rounded-full dark:bg-gray-700 animate-pulse"></div>
               ))}
             </div>
-            <div className="text-gray-800 dark:text-white space-y-6 order-1 lg:order-2 flex-1">
-              <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-              <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-              <div className="h-20 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+            <div className="flex-1 order-1 space-y-6 text-gray-800 dark:text-white lg:order-2">
+              <div className="h-12 bg-gray-200 rounded dark:bg-gray-700 animate-pulse"></div>
+              <div className="h-8 bg-gray-200 rounded dark:bg-gray-700 animate-pulse"></div>
+              <div className="h-20 bg-gray-200 rounded dark:bg-gray-700 animate-pulse"></div>
               <div className="flex gap-4 pt-4">
-                <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-full w-32 animate-pulse"></div>
-                <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-full w-32 animate-pulse"></div>
+                <div className="w-32 h-12 bg-gray-200 rounded-full dark:bg-gray-700 animate-pulse"></div>
+                <div className="w-32 h-12 bg-gray-200 rounded-full dark:bg-gray-700 animate-pulse"></div>
               </div>
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-lg h-96 bg-gray-200 dark:bg-gray-700 rounded-2xl animate-pulse"></div>
+            <div className="w-full max-w-lg bg-gray-200 h-96 dark:bg-gray-700 rounded-2xl animate-pulse"></div>
           </div>
         </div>
       </div>
@@ -91,24 +91,24 @@ function Hero() {
 
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <div className="flex items-center min-h-screen px-4 py-5 transition-colors duration-300 bg-white dark:bg-gray-900 sm:px-6 lg:px-8">
       <AnimatePresence mode="wait">
         <motion.div
           variants={containerVariant}
           initial="hidden"
           animate="visible"
-          className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full"
+          className="grid items-center w-full grid-cols-1 gap-8 mx-auto max-w-7xl lg:grid-cols-2 lg:gap-12"
         >
           {/* Left side - Social media icons and content */}
-          <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
+          <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start">
             {/* Social Media Icons - Vertical Column */}
             <motion.div 
               variants={itemVariant}
-              className="flex lg:flex-col gap-4 order-2 lg:order-1"
+              className="flex order-2 gap-4 lg:flex-col lg:order-1"
             >
               <a
                 href="https://x.com/SurafelWond?t=nc5w804hgjB2U36AeskP6Q&s=09"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-3 text-gray-600 transition-colors duration-300 rounded-full dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="Twitter"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -117,7 +117,7 @@ function Hero() {
               </a>
               <a
                 href="https://www.instagram.com/hevi590?igsh=azM0c210aXBlNnZr"
-                className="text-gray-600 dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 transition-colors duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-3 text-gray-600 transition-colors duration-300 rounded-full dark:text-gray-400 hover:text-pink-500 dark:hover:text-pink-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="Instagram"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -126,7 +126,7 @@ function Hero() {
               </a>
               <a
                 href="https://www.linkedin.com/in/surafel-wondu-829820210/"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-3 text-gray-600 transition-colors duration-300 rounded-full dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -135,7 +135,7 @@ function Hero() {
               </a>
               <a
                 href="https://github.com/HeviSurafel"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-3 text-gray-600 transition-colors duration-300 rounded-full dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -147,11 +147,11 @@ function Hero() {
             {/* Hero Text Content */}
             <motion.div 
               variants={itemVariant}
-              className="text-gray-800 dark:text-white space-y-6 order-1 lg:order-2 flex-1"
+              className="flex-1 order-1 space-y-6 text-gray-800 dark:text-white lg:order-2"
             >
               <motion.h1 
                 variants={itemVariant}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+                className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
               >
                {letter}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
@@ -160,28 +160,28 @@ function Hero() {
               </motion.h1>
               <motion.p 
                 variants={itemVariant}
-                className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300"
+                className="text-xl text-gray-600 sm:text-2xl dark:text-gray-300"
               >
                 Frontend Developer & UI/UX Designer
               </motion.p>
               <motion.p 
                 variants={itemVariant}
-                className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg"
+                className="max-w-lg text-lg leading-relaxed text-gray-600 dark:text-gray-300"
               >
                 Creating beautiful and functional web experiences with modern technologies 
                 and user-centered design principles.
               </motion.p>
               <motion.div 
                 variants={itemVariant}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col gap-4 pt-4 sm:flex-row"
               >
                 <Link href="#contact">
-                  <button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                  <button className="px-8 py-3 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-full hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 hover:-translate-y-1 hover:shadow-lg">
                     Get In Touch
                   </button>
                 </Link>
                 <Link href="#projects">
-                  <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-full font-semibold hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300">
+                  <button className="px-8 py-3 font-semibold text-gray-700 transition-all duration-300 border-2 border-gray-300 rounded-full dark:border-gray-600 dark:text-gray-300 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400">
                     View Projects
                   </button>
                 </Link>
@@ -195,20 +195,20 @@ function Hero() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-lg">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative overflow-hidden shadow-xl rounded-2xl">
                 <Image
                   src="/images/surafel.jpg"
                   alt="Surafel - Frontend Developer & UI/UX Designer"
                   width={500}
                   height={500}
-                  className="w-full h-auto object-cover"
+                  className="object-cover w-full h-auto"
                   priority
                 />
               </div>
               
               {/* Optional decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-100 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-1000"></div>
+              <div className="absolute w-24 h-24 bg-blue-100 rounded-full -top-4 -right-4 dark:bg-blue-900 mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+              <div className="absolute w-32 h-32 delay-1000 bg-purple-100 rounded-full -bottom-4 -left-4 dark:bg-purple-900 mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
             </div>
           </motion.div>
         </motion.div>

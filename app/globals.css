@@ -1,37 +1,22 @@
 @import "tailwindcss";
-:root {
-  /* Light theme */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #1a1a1a;
-  --text-secondary: #666666;
-  --accent: #0070f3;
-  --border: #eaeaea;
-}
 
-[data-theme="dark"] {
-  /* Dark theme */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent: #3291ff;
-  --border: #333333;
+:root {
+	color-scheme: light dark;
+}
+[data-theme='light'] {
+	color-scheme: light;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+[data-theme='dark'] {
+	color-scheme: dark;
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 41, 44, 47;
+	--background-end-rgb: 12, 12, 12;
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Apply variables to components */
-.container {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-.card {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border);
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
 }

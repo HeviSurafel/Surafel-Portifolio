@@ -1,74 +1,202 @@
+"use client";
 import Link from "next/link";
 
+import { easeIn, easeOut, motion } from "framer-motion";
 function About() {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+  };
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, ease: easeIn },
+    },
+  };
+  const headingVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: easeOut } },
+  };
+  const textContainer = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+  const btnContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const btnItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: easeOut },
+    },
+  };
+
+  const textItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: easeOut,
+      },
+    },
+  };
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: easeOut },
+    },
+  };
+
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
+        <motion.div
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="mb-4 text-4xl font-bold text-gray-800 sm:text-5xl">
             About{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               Me
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-xl text-gray-600">
             Passionate developer crafting digital experiences that make a
             difference
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left Side - Image */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <motion.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative"
+          >
+            <div className="relative overflow-hidden shadow-2xl rounded-2xl">
               <img
                 src="/images/hevi.jpg" // Replace with your image
                 alt="About Me"
-                className="w-full h-auto object-cover"
+                className="object-cover w-full h-auto"
               />
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-purple-600/10 mix-blend-overlay"></div>
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+            <div className="absolute w-24 h-24 bg-blue-100 rounded-full -top-6 -left-6 mix-blend-multiply filter blur-xl opacity-70"></div>
+            <div className="absolute w-32 h-32 bg-purple-100 rounded-full -bottom-6 -right-6 mix-blend-multiply filter blur-xl opacity-70"></div>
 
             {/* Experience badge */}
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4">
+            <div className="absolute p-4 bg-white shadow-lg -bottom-4 -left-4 rounded-2xl">
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">2+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Side - Content */}
           <div className="space-y-6">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+            <motion.div
+              variants={textContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="space-y-4"
+            >
+              <motion.h3
+                variants={headingVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="mb-4 text-2xl font-bold text-gray-800 sm:text-3xl"
+              >
                 Crafting Digital Experiences with Code & Creativity
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              </motion.h3>
+              <motion.p
+                variants={textItem}
+                className="mb-4 leading-relaxed text-gray-600"
+              >
                 I'm a passionate Frontend Developer and UI/UX Designer with over
                 2 years of experience creating modern, responsive web
                 applications. I love turning complex problems into simple,
                 beautiful designs.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
+              </motion.p>
+              <motion.p
+                variants={textItem}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="leading-relaxed text-gray-600"
+              >
                 My journey in web development started with curiosity and has
                 evolved into a career focused on creating user-centered
                 solutions that combine functionality with aesthetic appeal.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Skills */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-800">What I Do</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="space-y-4"
+            >
+              {/* Section Title */}
+              <motion.h4
+                variants={item}
+                className="text-xl font-semibold text-gray-800"
+              >
+                What I Do
+              </motion.h4>
+
+              {/* Cards Grid */}
+              <motion.div
+                variants={container}
+                className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+              >
+                {/* Frontend Development */}
+                <motion.div
+                  variants={item}
+                  className="flex items-center p-3 space-x-3 transition-colors duration-300 rounded-lg bg-gray-50 hover:bg-blue-50"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-lg">
                     <svg
                       className="w-5 h-5 text-blue-600"
                       fill="none"
@@ -86,9 +214,14 @@ function About() {
                   <span className="font-medium text-gray-700">
                     Frontend Development
                   </span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50 hover:bg-purple-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                </motion.div>
+
+                {/* UI/UX Design */}
+                <motion.div
+                  variants={item}
+                  className="flex items-center p-3 space-x-3 transition-colors duration-300 rounded-lg bg-gray-50 hover:bg-purple-50"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 bg-purple-100 rounded-lg">
                     <svg
                       className="w-5 h-5 text-purple-600"
                       fill="none"
@@ -106,18 +239,20 @@ function About() {
                   <span className="font-medium text-gray-700">
                     UI/UX Design
                   </span>
-                </div>
+                </motion.div>
 
-                {/* App Development Card */}
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-purple-100 dark:bg-purple-700 rounded-lg flex items-center justify-center">
+                {/* App Development */}
+                <motion.div
+                  variants={item}
+                  className="flex items-center p-3 space-x-3 transition-colors duration-300 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 bg-purple-100 rounded-lg dark:bg-purple-700">
                     <svg
                       className="w-5 h-5 text-purple-600 dark:text-purple-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      {/* Updated path: Device/Code Icon */}
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -129,18 +264,20 @@ function About() {
                   <span className="font-medium text-gray-700 dark:text-gray-200">
                     App Development
                   </span>
-                </div>
+                </motion.div>
 
-                {/* Telegram Bot Card */}
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-purple-100 dark:bg-purple-700 rounded-lg flex items-center justify-center">
+                {/* Telegram Bot */}
+                <motion.div
+                  variants={item}
+                  className="flex items-center p-3 space-x-3 transition-colors duration-300 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-purple-50 dark:hover:bg-purple-900"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 bg-purple-100 rounded-lg dark:bg-purple-700">
                     <svg
                       className="w-5 h-5 text-purple-600 dark:text-purple-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      {/* Updated path: Paper Airplane Icon */}
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -152,10 +289,14 @@ function About() {
                   <span className="font-medium text-gray-700 dark:text-gray-200">
                     Telegram Bot
                   </span>
-                </div>
+                </motion.div>
 
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50 hover:bg-green-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                {/* Responsive Design */}
+                <motion.div
+                  variants={item}
+                  className="flex items-center p-3 space-x-3 transition-colors duration-300 rounded-lg bg-gray-50 hover:bg-green-50"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
                     <svg
                       className="w-5 h-5 text-green-600"
                       fill="none"
@@ -173,9 +314,14 @@ function About() {
                   <span className="font-medium text-gray-700">
                     Responsive Design
                   </span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 rounded-lg bg-gray-50 hover:bg-orange-50 transition-colors duration-300">
-                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                </motion.div>
+
+                {/* Performance Optimization */}
+                <motion.div
+                  variants={item}
+                  className="flex items-center p-3 space-x-3 transition-colors duration-300 rounded-lg bg-gray-50 hover:bg-orange-50"
+                >
+                  <div className="flex items-center justify-center w-10 h-10 bg-orange-100 rounded-lg">
                     <svg
                       className="w-5 h-5 text-orange-600"
                       fill="none"
@@ -193,23 +339,36 @@ function About() {
                   <span className="font-medium text-gray-700">
                     Performance Optimization
                   </span>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Link href="/images/mammp_surafel_cv.pdf" download>
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-                  Download CV
-                </button>
-              </Link>
-              <Link href="#projects">
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
-                  View My Work
-                </button>
-              </Link>
-            </div>
+            <motion.div
+              variants={btnContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex flex-col gap-4 pt-6 sm:flex-row"
+            >
+              {/* Download CV Button */}
+              <motion.div variants={btnItem}>
+                <Link href="/images/mammp_surafel_cv.pdf" download>
+                  <button className="px-8 py-3 font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-full hover:bg-blue-700 hover:-translate-y-1 hover:shadow-lg">
+                    Download CV
+                  </button>
+                </Link>
+              </motion.div>
+
+              {/* View My Work Button */}
+              <motion.div variants={btnItem}>
+                <Link href="#projects">
+                  <button className="px-8 py-3 font-semibold text-gray-700 transition-all duration-300 border-2 border-gray-300 rounded-full hover:border-blue-600 hover:text-blue-600">
+                    View My Work
+                  </button>
+                </Link>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
