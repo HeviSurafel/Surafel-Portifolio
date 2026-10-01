@@ -4,89 +4,112 @@ import { motion, AnimatePresence, easeOut } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import Link from 'next/link';
 
+
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
   const { theme } = useTheme();
 
-  const projects = [
-    {
-      id: 1,
-      title: "Trust Charity Website",
-      description: "A modern MERN-stack charity platform with donation tracking, user roles, and secure admin dashboard.",
-      image: "/images/trust.png",
-      link: 'http://trustcharityassociation.org/',
-      github: "https://github.com/HeviSurafel", // Add your GitHub links
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Framer Motion"],
-      category: "web",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Blue Sapphire Ethiopian Tour Website",
-      description: "A full-featured Ethiopian tour and travel website with tour listings, booking system, and beautiful UI.",
-      image: "/images/blue.png",
-      link: 'https://bluesapphireethiopiatours.com/',
-      github: "https://github.com/HeviSurafel",
-      technologies: ["React", "Node.js", "MongoDB", "Redux", "Tailwind CSS", "Framer Motion"],
-      category: "web",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Arba Minch Stadium Donation Website",
-      description: "Donation management platform built using the MERN stack with roles: Admin, Customer, Finance, and SuperAdmin.",
-      image: "/images/arbaminch.png",
-      link: 'https://arbaminchstadium.makadamy.com/',
-      github: "https://github.com/HeviSurafel",
-      technologies: ["React", "Express", "MongoDB", "Node.js", "Framer Motion"],
-      category: "web",
-      featured: true
-    },
-    {
-      id: 4,
-      title: "Sebeta Sub City Website",
-      description: "Official sub-city website built with modern UI, announcement system, and service information pages.",
-      image: "/images/sebeta.png",
-      link: 'https://seta-frontend.vercel.app/',
-      github: "https://github.com/HeviSurafel",
-      technologies: ["React", "Tailwind CSS", "Node.js", "Framer Motion"],
-      category: "web",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "NelBlue Backend",
-      description: "Backend API built with Node.js/Express, handling authentication, products, bookings, and admin features.",
-      link: "https://nelblue.onrender.com",
-      image: "/images/neblue.png",
-      github: "https://github.com/HeviSurafel",
-      technologies: ["Node.js", "Express", "MongoDB", "JWT", "Framer Motion"],
-      category: "backend",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Telegram Bot Automation",
-      description: "A Telegram bot built with Python for automation and user interaction, deployed on Render.",
-      link: "https://telegram-bot-lhu8.onrender.com",
-      image: "/images/telegrambot.png",
-      github: "https://github.com/HeviSurafel",
-      technologies: ["Python", "Telegram API", "Framer Motion"],
-      category: "automation",
-      featured: false
-    },
-    {
-      id: 7,
-      title: "BotRent Backend API",
-      description: "A backend service powering the BotRent platform, featuring bot monitoring, user management, and secure API endpoints.",
-      link: "https://dashboard.render.com/web/srv-d36r7oh5pdvs73dc47gg",
-      image: "/images/botrent.png",
-      github: "https://github.com/HeviSurafel",
-      technologies: ["Node.js", "Express", "MongoDB", "JWT"],
-      category: "backend",
-      featured: false
-    }
-  ];
+const projects = [
+  {
+    id: 10,
+    title: "Dorze Lodge Website",
+    description: "A hospitality website for Dorze Lodge featuring room listings, lodge amenities, booking options, and a rich cultural experience showcase that highlights the heritage of the Dorze people.",
+    image: "/images/favicon.webp",
+    link: 'https://dorzelodge.com/',
+    github: "https://github.com/HeviSurafel",
+    technologies: ["React", "Node.js", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    featured: false
+  },
+  {
+    id: 8,
+    title: "Rise-On 4D Equb Platform",
+    description: "A digital rotating savings (Equb) platform with automated smart cycles, guaranteed payouts, KYC verification, and an integrated asset marketplace for vehicles and equipment.",
+    image: "/images/fourd.png",
+    link: 'https://fourd.riseon-tech.com/',
+    github: "https://github.com/HeviSurafel",
+    technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Framer Motion", "Payment APIs"],
+    category: "web",
+    featured: true
+  },
+  {
+    id: 9,
+    title: "Gayo Omo Valley Tours",
+    description: "A tour and travel website showcasing Ethiopia's Omo Valley, with curated tour packages, booking inquiries, and immersive destination galleries.",
+    image: "/images/Logo.webp",
+    link: 'https://www.gayoomovalleytours.com/',
+    github: "https://github.com/HeviSurafel",
+    technologies: ["React", "Node.js", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    featured: false
+  },
+  {
+    id: 11,
+    title: "Wetravel Ethiopia",
+    description: "An Ethiopian travel and tour booking platform with destination listings, customizable itineraries, and a seamless inquiry flow.",
+    image: "/images/LogoMain.webp",
+    link: 'https://wetravelethiopia.com/',
+    github: "https://github.com/HeviSurafel",
+    technologies: ["React", "Node.js", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    featured: false
+  },
+  {
+    id: 12,
+    title: "Omo Valley Explore Tours",
+    description: "A tourism website dedicated to Omo Valley exploration, offering detailed tour packages, cultural insights, and easy booking for visitors.",
+    image: "/images/Omo-Logo.avif",
+    link: 'http://omovalleyexploretours.com/',
+    github: "https://github.com/HeviSurafel",
+    technologies: ["React", "Node.js", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    featured: false
+  },
+  {
+    id: 2,
+    title: "Blue Sapphire Ethiopian Tour Website",
+    description: "A full-featured Ethiopian tour and travel website with tour listings, booking system, and beautiful UI.",
+    image: "/images/blue.png",
+    link: 'https://bluesapphireethiopiatours.com/',
+    github: "https://github.com/HeviSurafel",
+    technologies: ["React", "Node.js", "MongoDB", "Redux", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    featured: true
+  },
+  {
+    id: 5,
+    title: "NelBlue Backend",
+    description: "Backend API built with Node.js/Express, handling authentication, products, bookings, and admin features.",
+    link: "https://nelblue.onrender.com",
+    image: "/images/neblue.png",
+    github: "https://github.com/HeviSurafel",
+    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Framer Motion"],
+    category: "backend",
+    featured: false
+  },
+  {
+    id: 6,
+    title: "Telegram Bot Automation",
+    description: "A Telegram bot built with Python for automation and user interaction, deployed on Render.",
+    link: "https://telegram-bot-lhu8.onrender.com",
+    image: "/images/telegrambot.png",
+    github: "https://github.com/HeviSurafel",
+    technologies: ["Python", "Telegram API", "Framer Motion"],
+    category: "automation",
+    featured: false
+  },
+  {
+    id: 7,
+    title: "BotRent Backend API",
+    description: "A backend service powering the BotRent platform, featuring bot monitoring, user management, and secure API endpoints.",
+    link: "https://dashboard.render.com/web/srv-d36r7oh5pdvs73dc47gg",
+    image: "/images/botrent.png",
+    github: "https://github.com/HeviSurafel",
+    technologies: ["Node.js", "Express", "MongoDB", "JWT"],
+    category: "backend",
+    featured: false
+  },
+];
 
   const categories = [
     { id: 'all', name: 'All Projects' },
